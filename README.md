@@ -1,6 +1,6 @@
 # Gulp4-v2
 
-###Начало работы
+## Начало работы
   `npmi`, 
   `gulp`
 
@@ -39,3 +39,5 @@ Panini: https://github.com/zurb/panini.git
 `const panini = require("panini");`  Работа с HTML, создает шаблоны и реализует фрагменты кода
 
 `const browsersync = require("browser-sync").create();` // локальный сервер с live reload`
+
+### Плагин Panini: https://github.com/zurb/panini.git
