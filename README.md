@@ -9,9 +9,11 @@ Panini: https://github.com/zurb/panini.git
 `const { src, dest } = require("gulp");` 
 чтение и запись исходников
 
-`const gulp = require("gulp"); // подключает GULP`
-const autoprefixer = require("gulp-autoprefixer"); //автопрефикс
-const cssbeautify = require("gulp-cssbeautify"); //делаем css красиво
+`const gulp = require("gulp");`// подключает GULP
+
+`const autoprefixer = require("gulp-autoprefixer");` //автопрефикс
+
+`const cssbeautify = require("gulp-cssbeautify");`//делаем css красиво
 const removeComments = require('gulp-strip-css-comments'); //удалет комментарии в *.min.css
 const rename = require("gulp-rename"); // добавляет *.min к файлам
 const sass = require("gulp-sass"); // компилятор SASS
