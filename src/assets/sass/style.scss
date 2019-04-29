@@ -1,5 +1,10 @@
-html, body {
-    height: 100%;
-    font-size: 20px;
+@import "vars";
 
+
+/* Default styles */
+body {
+    margin: 0;
 }
+
+
+/* Blocks */

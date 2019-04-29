@@ -19,35 +19,32 @@ const browsersync = require("browser-sync").create(); // локальный се
 
 
 
-/* Paths to source/build/watch files
-=========================*/
-
+/* Paths */
 var path = {
     build: {
         html: "dist/",
         js: "dist/assets/js/",
         css: "dist/assets/css/",
-        images: "dist/assets/i/"
+        images: "dist/assets/img/"
     },
     src: {
-        html: "src/*.{htm,html,php}",
+        html: "src/*.html",
         js: "src/assets/js/*.js",
         css: "src/assets/sass/style.scss",
-        images: "src/assets/i/**/*.{jpg,png,svg,gif,ico}"
+        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
     },
     watch: {
-        html: "src/**/*.{htm,html,php}",
+        html: "src/**/*.html",
         js: "src/assets/js/**/*.js",
         css: "src/assets/sass/**/*.scss",
-        images: "src/assets/i/**/*.{jpg,png,svg,gif,ico}"
+        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
     },
     clean: "./dist"
-};
+}
 
 
-/* Tasks
-=========================*/
 
+/* Tasks */
 function browserSync(done) {
     browsersync.init({
         server: {
@@ -55,17 +52,15 @@ function browserSync(done) {
         },
         port: 3000
     });
-    done();
 }
 
 function browserSyncReload(done) {
     browsersync.reload();
-    done();
 }
 
 function html() {
     panini.refresh();
-    return src(path.src.html, { base: 'src/' })
+    return src(path.src.html, { base: "src/" })
         .pipe(plumber())
         .pipe(panini({
             root: 'src/',
@@ -79,11 +74,11 @@ function html() {
 }
 
 function css() {
-    return src(path.src.css, { base: './src/assets/sass/' })
+    return src(path.src.css, { base: "src/assets/sass/" })
         .pipe(plumber())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass())
         .pipe(autoprefixer({
-            browsers: ["last 8 versions"],
+            browsers: ['last 8 versions'],
             cascade: true
         }))
         .pipe(cssbeautify())
@@ -104,7 +99,7 @@ function css() {
 }
 
 function js() {
-    return src(path.src.js, { base: './src/assets/js/' })
+    return src(path.src.js, {base: './src/assets/js/'})
         .pipe(plumber())
         .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
@@ -119,6 +114,7 @@ function js() {
 
 function images() {
     return src(path.src.images)
+        .pipe(imagemin())
         .pipe(dest(path.build.images));
 }
 
@@ -137,7 +133,8 @@ const build = gulp.series(clean, gulp.parallel(html, css, js, images));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 
-// export tasks
+
+/* Exports Tasks */
 exports.html = html;
 exports.css = css;
 exports.js = js;
