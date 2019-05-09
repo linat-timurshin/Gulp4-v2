@@ -17,7 +17,7 @@ Panini: https://github.com/zurb/panini.git
 
 `const cssbeautify = require("gulp-cssbeautify");` - делаем css красиво
 
-`const removeComments = require('gulp-strip-css-comments');` - удалет комментарии в *.min.css
+`const removeComments = require('gulp-strip-css-comments');` - удаляет комментарии в *.min.css
 
 `const rename = require("gulp-rename");` - добавляет *.min к файлам
 
