@@ -36,7 +36,7 @@ Panini: https://github.com/zurb/panini.git
 
 `const del = require("del");` - очищает папку Dist
 
-`const panini = require("panini");`  Работа с HTML, создает шаблоны и реализует фрагменты кода
+`const panini = require("panini");`  Работа с HTML, создает шаблоны и реализует фрагменты кода, плагин PANINI
 
 `const browsersync = require("browser-sync").create();` // локальный сервер с live reload`
 
