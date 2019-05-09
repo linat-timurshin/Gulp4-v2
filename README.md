@@ -1,7 +1,7 @@
 # Gulp4-v2
 
 ## Начало работы
-  `npmi`, 
+  `npm i`, 
   `gulp`
 
 Panini: https://github.com/zurb/panini.git
