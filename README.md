@@ -1,8 +1,10 @@
 # Gulp4-v2
 
 ## Начало работы
-  `npm i`, 
-  `gulp`
+  #### `npm i` Установка 
+  #### `gulp`Запуск
+  #### `gulp clean` Очищает папку DIST
+  
 
 Panini: https://github.com/zurb/panini.git
 
