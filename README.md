@@ -43,3 +43,7 @@ Panini: https://github.com/zurb/panini.git
 `const browsersync = require("browser-sync").create();` // локальный сервер с live reload`
 
 ### Плагин Panini: https://github.com/zurb/panini.git
+
+обновлено 13 07 2019
+
+
