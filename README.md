@@ -44,6 +44,6 @@ Panini: https://github.com/zurb/panini.git
 
 ### Плагин Panini: https://github.com/zurb/panini.git
 
-обновлено 13 07 2019
+обновлено 24 07 2019
 
 Помощь и вопросы: t.me/stovtoroj
