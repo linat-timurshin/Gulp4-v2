@@ -6,8 +6,6 @@
   #### `gulp clean` Очищает папку DIST
   
 
-Panini: https://github.com/zurb/panini.git
-
 
 
 `const { src, dest } = require("gulp");` 
