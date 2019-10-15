@@ -28,7 +28,7 @@
 
 `const rigger = require("gulp-rigger");` - склеивает разные JS файлы в один
 
-`const uglify = require("gulp-uglify");` - сжимает  JS файлы
+`const uglify = require('gulp-uglify-es').default; // сжимает  JS файлы ES6
 
 `const plumber = require("gulp-plumber");` -  при ошибке в JS не слетают Таски в Gulp
 
@@ -42,6 +42,6 @@
 
 ### Плагин Panini: https://github.com/zurb/panini.git
 
-обновлено 11 10 2019
+обновлено 15 10 2019
 
 Помощь и вопросы: t.me/stovtoroj
