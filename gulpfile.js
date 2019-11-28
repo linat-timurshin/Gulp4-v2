@@ -1,5 +1,4 @@
 "use strict";
-
 const { src, dest } = require("gulp"); // чтение и запись исходников
 const gulp = require("gulp"); // подключает GULP
 const autoprefixer = require("gulp-autoprefixer"); //автопрефикс
@@ -11,38 +10,34 @@ const cssnano = require("gulp-cssnano"); // сжимет CSS и удалет п�
 const rigger = require("gulp-rigger"); // склеивает разные JS файлы в один
 const uglify = require('gulp-uglify-es').default; // сжимает  JS файлы es6
 const plumber = require("gulp-plumber"); // при ошибке в JS не слетают Таски в Gulp
-const imagemin = require("gulp-imagemin"); // сжатие и оптимизация изображений
+// const imagemin = require("gulp-imagemin"); // сжатие и оптимизация изображений
 const del = require("del"); // очищает папку Dist
 const panini = require("panini"); //  Работа с HTML, создает шаблоны и реализует фрагменты кода
 const browsersync = require("browser-sync").create(); // локальный сервер с live reload
-
-
-
+const svgmin = require('gulp-svgmin');
 
 /* Paths */
-var path = {
+let path = {
     build: {
         html: "dist/",
         js: "dist/assets/js/",
         css: "dist/assets/css/",
-        images: "dist/assets/img/"
+        images: "dist/assets/images/",
     },
     src: {
         html: "src/*.html",
         js: "src/assets/js/*.js",
         css: "src/assets/sass/style.scss",
-        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
+        images: "src/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webmanifest,xml}"
     },
     watch: {
         html: "src/**/*.html",
         js: "src/assets/js/**/*.js",
         css: "src/assets/sass/**/*.scss",
-        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
+        images: "src/assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webmanifest,xml}"
     },
     clean: "./dist"
-}
-
-
+};
 
 /* Tasks */
 function browserSync(done) {
@@ -114,9 +109,10 @@ function js() {
 
 function images() {
     return src(path.src.images)
-        .pipe(imagemin())
+    // .pipe(imagemin())
         .pipe(dest(path.build.images));
 }
+
 
 function clean() {
     return del(path.clean);

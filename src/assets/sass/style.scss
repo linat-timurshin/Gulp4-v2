@@ -1,4 +1,5 @@
 @import "vars";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 
 
 /* Default styles */
@@ -6,4 +7,8 @@
 
 
 /* Blocks */
-@import "blocks/header"
+@import "blocks/section";
+@import "blocks/container";
+@import "blocks/link";
+@import "blocks/icon";
+@import "blocks/header";
